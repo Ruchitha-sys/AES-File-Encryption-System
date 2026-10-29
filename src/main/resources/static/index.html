@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruchitha | AES File Encryption</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<header class="header">
+    <a href="/" class="logo">File Encrypter<span>.</span></a>
+    <span class="security-label">AES-256-GCM SECURITY</span>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <div class="security-icon">🔐</div>
+        <p class="eyebrow">PRIVATE. SECURE. SIMPLE.</p>
+        <h1>Your files,<br><span>protected.</span></h1>
+        <p class="subtitle">
+            Encrypt your files with strong AES-256-GCM encryption.
+            <br>
+            Decrypt them whenever you need with your password.
+        </p>
+    </section>
+
+    <section class="workspace">
+        <div class="tabs">
+            <button type="button" class="tab active" data-mode="encrypt">
+                Encrypt
+            </button>
+            <button type="button" class="tab" data-mode="decrypt">
+                Decrypt
+            </button>
+        </div>
+
+        <form id="fileForm">
+            <label for="fileInput" class="field-label">Choose your file</label>
+
+            <label for="fileInput" class="drop-zone" id="dropZone">
+                <span class="upload-icon">↑</span>
+                <strong id="fileTitle">Choose a file to protect</strong>
+                <span id="fileDescription">Click here to browse your files</span>
+                <input type="file" id="fileInput" required>
+            </label>
+
+            <div class="file-info" id="fileInfo" hidden>
+                <span>📄</span>
+                <span id="fileName"></span>
+                <button type="button" id="removeFile" aria-label="Remove file">×</button>
+            </div>
+
+            <label for="password" class="field-label">Password</label>
+            <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter a strong password"
+                    minlength="12"
+                    autocomplete="new-password"
+                    required
+            >
+            <p class="hint" id="passwordHint">
+                Use at least 12 characters and remember your password.
+            </p>
+
+            <label for="confirmPassword" class="field-label" id="confirmLabel">
+                Confirm password
+            </label>
+            <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Re-enter your password"
+                    minlength="12"
+                    autocomplete="new-password"
+                    required
+            >
+
+            <button type="submit" id="submitButton" class="primary-button">
+                Encrypt File <span>→</span>
+            </button>
+        </form>
+
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+    </section>
+
+    <section class="features">
+        <div>
+            <span>🛡️</span>
+            <strong>AES-256-GCM</strong>
+            <p>Confidentiality and tamper detection</p>
+        </div>
+        <div>
+            <span>🔑</span>
+            <strong>Password protected</strong>
+            <p>Your password derives the encryption key</p>
+        </div>
+        <div>
+            <span>📁</span>
+            <strong>Your files</strong>
+            <p>Download the processed file</p>
+        </div>
+    </section>
+
+    <p class="privacy-note">
+        Keep your password safe. If you lose it, your encrypted file
+        cannot be recovered.
+    </p>
+</main>
+
+<footer>
+    <p> AES File Encryption . Build with Java and Spring Boot</p>
+</footer>
+</body>
+</html>
